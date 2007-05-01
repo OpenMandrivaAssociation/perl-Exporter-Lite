@@ -1,6 +1,6 @@
 %define module 	Exporter-Lite
-%define version 0.01
-%define release %mkrel 3
+%define version 0.02
+%define release %mkrel 1
 
 Summary:	Exporter-Lite perl module
 Name: 		perl-%{module}
