@@ -1,18 +1,18 @@
-%define module 	Exporter-Lite
-%define version 0.02
-%define release %mkrel 3
+%define upstream_name 	 Exporter-Lite
+%define upstream_version 0.02
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Exporter-Lite perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Exporter/%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel >= 0:5.600
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Exporter/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is an alternative to Exporter intended to provide a lightweight
@@ -20,7 +20,7 @@ subset of its functionality.  It supports "import()", @EXPORT and
 @EXPORT_OK and not a whole lot else.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -39,5 +39,3 @@ rm -rf $RPM_BUILD_ROOT
 #%doc README Changes
 %{perl_vendorlib}/Exporter/Lite.pm
 %{_mandir}/*/*
-
-
