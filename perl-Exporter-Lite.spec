@@ -1,11 +1,12 @@
 %define upstream_name 	 Exporter-Lite
-%define upstream_version 0.04
+%define upstream_version 0.05
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Exporter-Lite perl module
+
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -34,6 +35,7 @@ make test
 %files
 %{perl_vendorlib}/Exporter/Lite.pm
 %{_mandir}/*/*
+
 
 
 
